@@ -2,7 +2,7 @@ package br.com.andrethiago.hamcrest;
 
 import java.math.BigDecimal;
 
-public class ContaBancaria {
+public class ContaBancaria implements Comparable<ContaBancaria> {
 
 	private String agencia;
 
@@ -27,6 +27,10 @@ public class ContaBancaria {
 
 	public BigDecimal getSaldo() {
 		return saldo;
+	}
+
+	public int compareTo(ContaBancaria outra) {
+		return this.getSaldo().compareTo(outra.getSaldo());
 	}
 
 }
